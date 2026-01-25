@@ -1,6 +1,7 @@
 import { PersonalInfo } from '@/types'
-import { Mail, Calendar, MapPin } from 'lucide-react'
+import { Mail, MapPin, Github, MessageCircle, Linkedin } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
+import Image from 'next/image'
 
 interface HeroProps {
   personal: PersonalInfo
@@ -10,9 +11,24 @@ export default function Hero({ personal }: HeroProps) {
   return (
     <section className="pt-12 pb-8">
       <div className="flex flex-col md:flex-row md:items-start gap-6">
-        {/* Avatar placeholder */}
-        <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-700 dark:to-neutral-600 flex items-center justify-center text-3xl font-bold text-neutral-500 dark:text-neutral-300">
-          JC
+        {/* Avatar */}
+        <div className="relative w-32 h-32 md:w-38 md:h-38">
+          {/* Light mode image */}
+          <Image
+            src="/capybara_day.jpg"
+            alt="Profile"
+            fill
+            className="rounded-2xl object-cover dark:hidden"
+            priority
+          />
+          {/* Dark mode image */}
+          <Image
+            src="/capybara_night.png"
+            alt="Profile"
+            fill
+            className="rounded-2xl object-cover hidden dark:block"
+            priority
+          />
         </div>
 
         <div className="flex-1">
@@ -36,16 +52,34 @@ export default function Hero({ personal }: HeroProps) {
               className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-sm rounded-lg hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors"
             >
               <Mail className="w-4 h-4" />
-              Send Email
+              Email
             </a>
             <a
-              href={personal.portfolio}
+              href={personal.github}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 text-sm rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
             >
-              <Calendar className="w-4 h-4" />
-              Visit Portfolio
+              <Github className="w-4 h-4" />
+              GitHub
+            </a>
+            <a
+              href={personal.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 text-sm rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
+            >
+              <Linkedin className="w-4 h-4" />
+              LinkedIn
+            </a>
+            <a
+              href={`https://wa.me/${personal.whatsapp.replace(/\D/g, '')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 border border-green-500 text-green-600 dark:text-green-400 text-sm rounded-lg hover:bg-green-50 dark:hover:bg-green-900/20 transition-colors"
+            >
+              <MessageCircle className="w-4 h-4" />
+              WhatsApp
             </a>
           </div>
         </div>

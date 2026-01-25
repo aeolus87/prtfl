@@ -1,5 +1,5 @@
 import { PersonalInfo } from '@/types'
-import { Mail, Link2, ChevronRight } from 'lucide-react'
+import { Mail, Link2, ChevronRight, BookOpen } from 'lucide-react'
 
 interface ContactProps {
   personal: PersonalInfo
@@ -28,7 +28,7 @@ export default function Contact({ personal }: ContactProps) {
         </a>
 
         <a
-          href={personal.portfolio}
+          href={personal.github}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors group"
@@ -43,6 +43,24 @@ export default function Contact({ personal }: ContactProps) {
             </svg>
           </div>
           <span className="text-sm text-neutral-700 dark:text-neutral-300">GitHub</span>
+        </a>
+
+        <a
+          href={personal.medium}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors group"
+        >
+          <div className="w-8 h-8 bg-black dark:bg-white rounded-lg flex items-center justify-center">
+            <svg
+              className="w-4 h-4 text-white dark:text-black"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
+            </svg>
+          </div>
+          <span className="text-sm text-neutral-700 dark:text-neutral-300">Medium Blog</span>
         </a>
 
         <a

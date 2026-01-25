@@ -3,11 +3,12 @@ import { FolderGit2, ChevronRight } from 'lucide-react'
 
 interface ProjectsProps {
   projects: Project[]
+  className?: string
 }
 
-export default function Projects({ projects }: ProjectsProps) {
+export default function Projects({ projects, className }: ProjectsProps) {
   return (
-    <div className="p-5 border border-neutral-200 dark:border-neutral-800 rounded-xl bg-white dark:bg-neutral-900">
+    <div className={`p-5 border border-neutral-200 dark:border-neutral-800 rounded-xl bg-white dark:bg-neutral-900 ${className || ''}`}>
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <FolderGit2 className="w-4 h-4 text-neutral-500 dark:text-neutral-400" />

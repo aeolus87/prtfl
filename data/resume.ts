@@ -3,15 +3,19 @@ import { ResumeData } from '@/types'
 export const resumeData: ResumeData = {
   personal: {
     name: 'Julius Callejo',
-    title: 'Full Stack Engineer',
+    title: 'Full Stack Engineer | Aspiring SOC Analyst',
     location: 'Quezon City, Metro Manila',
     email: 'callejojuls@gmail.com',
     phone: '+63 9995359698',
     linkedin: 'https://linkedin.com/in/jcallejo',
-    portfolio: 'https://aeothedev.vercel.app',
+    github: 'https://github.com/aeolus87',
+    whatsapp: '+639760861727',
+    medium: 'https://medium.com/@aeothedev',
   },
 
   summary: `Full Stack Engineer with experience building and maintaining high-scale, AI-integrated web applications. Proven track record in supporting platforms handling 2M+ callers, developing enterprise management tools, and implementing real-time collaborative systems. Expert in React 19, NestJS, and Python (FastAPI) with a focus on delivering clean, maintainable, and scalable codebases through continuous learning and modern architectural patterns.`,
+
+  socSummary: `Aspiring SOC Analyst with a strong foundation in networking, cybersecurity fundamentals, and hands-on experience in security monitoring, log analysis, and threat detection. Skilled in using SIEM tools, conducting incident response, and building homelabs for practical experience. Currently expanding knowledge through TryHackMe and Cybrary's SOC Analyst course. Passionate about cybersecurity and seeking an entry-level SOC Analyst role.`,
 
   techStack: [
     {
@@ -22,7 +26,6 @@ export const resumeData: ResumeData = {
         'TypeScript',
         'Zustand',
         'Tailwind CSS',
-        'Radix UI',
         'Three.js',
         'Cesium',
       ],
@@ -30,7 +33,7 @@ export const resumeData: ResumeData = {
     {
       name: 'Backend',
       skills: [
-        'Node.js (NestJS/Express 5)',
+        'Node.js (NestJS/Fastify)',
         'Python (FastAPI)',
         'WebSockets',
         'Redis caching',
@@ -48,6 +51,37 @@ export const resumeData: ResumeData = {
     {
       name: 'DevOps',
       skills: ['Docker', 'GitHub Actions CI/CD', 'Git', 'Swagger/OpenAPI', 'Puppeteer'],
+    },
+  ],
+
+  socSkills: [
+    {
+      name: 'Networking',
+      skills: ['TCP/IP', 'Firewalls', 'VLANs', 'OSI Model'],
+    },
+    {
+      name: 'Cybersecurity Tools',
+      skills: ['Wazuh', 'Splunk (basic)', 'Wireshark', 'Nmap', 'Burp Suite'],
+    },
+    {
+      name: 'SIEM & Log Analysis',
+      skills: ['Wazuh (hands-on)', 'Basic Splunk'],
+    },
+    {
+      name: 'Threat Intelligence',
+      skills: ['MITRE ATT&CK', 'IDS/IPS concepts'],
+    },
+    {
+      name: 'Operating Systems',
+      skills: ['Windows', 'Linux (Kali, Ubuntu, Debian)'],
+    },
+    {
+      name: 'Scripting & Automation',
+      skills: ['Basic Python', 'Bash'],
+    },
+    {
+      name: 'Virtualization & Homelab',
+      skills: ['VMware', 'VirtualBox'],
     },
   ],
 
@@ -98,6 +132,58 @@ export const resumeData: ResumeData = {
         'Connected Binance and Polygon.io for live market data and utilized Ethers.js/Solana Web3.js for secure blockchain wallet interactions.',
         'Implemented caching and rate-limiting patterns via Redis to ensure backend stability and performance during high-data-flow periods.',
       ],
+    },
+  ],
+
+  blogs: [
+    {
+      title: 'Home Security Lab',
+      subtitle: 'Personal Security Operations Lab',
+      description: [
+        'Built a homelab using VMware with Kali Linux and Windows machines for hands-on security practice.',
+        'Deployed Wazuh SIEM for log collection and threat detection across the virtual environment.',
+        'Simulated real-world attacks (brute-force, malware analysis) and analyzed logs to understand attack patterns.',
+      ],
+      link: 'https://medium.com/@aeothedev/building-a-private-test-lab-connecting-windows-11-and-kali-linux-in-vmware-5e24ba347dd8',
+    },
+  ],
+
+  certifications: [
+    {
+      name: 'SOC Analyst Level 1',
+      issuer: 'Cybrary',
+      year: '2025',
+      description: 'Hands-on experience in log analysis, security monitoring, and incident response.',
+    },
+    {
+      name: 'Cybersecurity Essentials',
+      issuer: 'Cisco',
+      year: '2024',
+      description: 'Covers fundamental cybersecurity concepts, attack vectors, and defense strategies. Relevant for SOC roles as it builds a foundational understanding of threats, vulnerabilities, and risk mitigation.',
+    },
+    {
+      name: 'CCNAv7: Introduction to Networks',
+      issuer: 'Cisco',
+      year: '2023',
+      description: 'Teaches networking basics like TCP/IP, routing, and switching. Important for SOC Analysts, as understanding network traffic is crucial for detecting anomalies and attacks.',
+    },
+    {
+      name: 'CCNAv7: Enterprise Networking, Security, and Automation',
+      issuer: 'Cisco',
+      year: '2023',
+      description: 'Covers advanced networking concepts, automation, and security best practices. Relevant for SOC Analysts who need to analyze security logs and identify threats in enterprise networks.',
+    },
+    {
+      name: 'Network Security',
+      issuer: 'Cisco',
+      year: '2023',
+      description: 'Focuses on securing networks, firewalls, VPNs, and intrusion prevention. Directly applies to SOC roles as analysts monitor and respond to security incidents in network environments.',
+    },
+    {
+      name: 'Introduction to Cybersecurity',
+      issuer: 'Cisco',
+      year: '2023',
+      description: 'Introduces cybersecurity principles, security tools, and best practices. Useful for entry-level SOC roles as it gives a broad overview of security operations.',
     },
   ],
 

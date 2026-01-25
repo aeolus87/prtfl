@@ -5,7 +5,9 @@ export interface PersonalInfo {
   email: string
   phone: string
   linkedin: string
-  portfolio: string
+  github: string
+  whatsapp: string
+  medium: string
 }
 
 export interface TechCategory {
@@ -36,11 +38,29 @@ export interface Education {
   graduationDate: string
 }
 
+export interface Certification {
+  name: string
+  issuer: string
+  year: string
+  description?: string
+}
+
+export interface Blog {
+  title: string
+  subtitle: string
+  description: string[]
+  link: string
+}
+
 export interface ResumeData {
   personal: PersonalInfo
   summary: string
+  socSummary: string
   techStack: TechCategory[]
+  socSkills: TechCategory[]
   experience: Experience[]
   projects: Project[]
+  blogs: Blog[]
+  certifications: Certification[]
   education: Education
 }
