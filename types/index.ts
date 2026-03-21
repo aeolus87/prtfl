@@ -29,7 +29,13 @@ export interface Project {
   subtitle: string
   techStack: string
   description: string[]
+  /** Primary repo or product link */
   link?: string
+  /** Demo, deployed app, or docs */
+  liveUrl?: string
+  pinned?: boolean
+  /** One-line “what it is / why it exists” */
+  purpose?: string
 }
 
 export interface Education {

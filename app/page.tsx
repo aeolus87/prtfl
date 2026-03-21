@@ -19,14 +19,18 @@ export default function Home() {
           {/* Left column */}
           <div className="flex flex-col gap-6">
             <About summary={resumeData.summary} socSummary={resumeData.socSummary} />
-            <TechStack techStack={resumeData.techStack} limit={2} />
+            <TechStack techStack={resumeData.techStack} limit={4} />
             <TechStack
               techStack={resumeData.socSkills}
               limit={3}
               title="Security Skills"
               variant="security"
             />
-            <Projects projects={resumeData.projects} className="flex-1" />
+            <Projects
+              projects={resumeData.projects}
+              githubProfileUrl={resumeData.personal.github}
+              className="flex-1"
+            />
           </div>
 
           {/* Right column */}

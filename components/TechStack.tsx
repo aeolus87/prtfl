@@ -37,7 +37,7 @@ export default function TechStack({ techStack, limit = 2, title = 'Tech Stack', 
               {category.name}
             </h3>
             <div className="flex flex-wrap gap-1.5">
-              {category.skills.slice(0, 6).map((skill) => (
+              {category.skills.slice(0, 10).map((skill) => (
                 <span
                   key={skill}
                   className={`px-2.5 py-1 text-xs border rounded-md ${variant === 'security'

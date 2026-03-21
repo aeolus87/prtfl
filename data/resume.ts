@@ -13,7 +13,7 @@ export const resumeData: ResumeData = {
     medium: 'https://medium.com/@aeothedev',
   },
 
-  summary: `Full Stack Engineer with experience building and maintaining high-scale, AI-integrated web applications. Proven track record in supporting platforms handling 2M+ callers, developing enterprise management tools, and implementing real-time collaborative systems. Expert in React 19, NestJS, and Python (FastAPI) with a focus on delivering clean, maintainable, and scalable codebases through continuous learning and modern architectural patterns.`,
+  summary: `Full Stack Engineer who ships fast: AI-integrated products, real-time systems, and full-stack features from idea to production. Strong in React 19, NestJS, and Python (FastAPI)—comfortable owning APIs, UIs, and infra touches (Docker, CI/CD) while keeping codebases clear and easy to extend.`,
 
   socSummary: `Aspiring SOC Analyst with a strong foundation in networking, cybersecurity fundamentals, and hands-on experience in security monitoring, log analysis, and threat detection. Skilled in using SIEM tools, conducting incident response, and building homelabs for practical experience. Currently expanding knowledge through TryHackMe and Cybrary's SOC Analyst course. Passionate about cybersecurity and seeking an entry-level SOC Analyst role.`,
 
@@ -23,6 +23,7 @@ export const resumeData: ResumeData = {
       skills: [
         'React 19',
         'Next.js',
+        'Vite',
         'TypeScript',
         'Zustand',
         'Tailwind CSS',
@@ -35,22 +36,42 @@ export const resumeData: ResumeData = {
       skills: [
         'Node.js (NestJS/Fastify)',
         'Python (FastAPI)',
-        'WebSockets',
-        'Redis caching',
+        'REST APIs',
+        'WebSockets / Socket.IO',
+        'JWT auth',
+        'Stripe (billing & webhooks)',
+        'Redis (cache & rate limits)',
         'TypeORM',
       ],
     },
     {
-      name: 'AI & Blockchain',
-      skills: ['Gemini 2.0', 'Groq (Llama)', 'OpenRouter', 'Ethers.js', 'Solana Web3.js'],
+      name: 'AI, RAG & Blockchain',
+      skills: [
+        'OpenAI API (embeddings & LLM)',
+        'RAG (retrieval, grounding, citations)',
+        'Gemini 2.0',
+        'Groq (Llama)',
+        'OpenRouter',
+        'Ethers.js',
+        'Solana Web3.js',
+      ],
     },
     {
-      name: 'Databases',
-      skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'AWS S3'],
+      name: 'Data & storage',
+      skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Qdrant (vector)', 'AWS S3'],
     },
     {
-      name: 'DevOps',
-      skills: ['Docker', 'GitHub Actions CI/CD', 'Git', 'Swagger/OpenAPI', 'Puppeteer'],
+      name: 'DevOps & quality',
+      skills: [
+        'Docker',
+        'docker-compose',
+        'GitHub Actions CI/CD',
+        'Git',
+        'Swagger / OpenAPI',
+        'Playwright (E2E)',
+        'pytest',
+        'Puppeteer',
+      ],
     },
   ],
 
@@ -93,7 +114,7 @@ export const resumeData: ResumeData = {
       period: 'April 2025 – Present',
       current: true,
       achievements: [
-        'Voice Automation & Scale: Contributed to the development and scaling of a voice automation infrastructure handling 2 million+ callers. Supported the transition from third-party APIs to an in-house LLM orchestration layer via OpenRouter, improving system latency.',
+        'Voice & LLM: Shipped voice-automation features quickly across iterations—moved from third-party APIs to an in-house LLM orchestration layer via OpenRouter for better latency and control.',
         'Collaborative Trading System: Implemented real-time collaborative modules using NestJS and Socket.IO. Integrated Polygon.io for live market data and assisted in building synchronized charting tools.',
         'Inspection & Survey Platform: Developed a multi-tenant property inspection system featuring map-based location tracking (Leaflet) and automated PDF report generation via Puppeteer.',
         'AI Feature Integration: Leveraged Gemini 2.0 via OpenRouter to implement automated internal documentation tools and real-time meeting summaries under team guidance.',
@@ -114,23 +135,35 @@ export const resumeData: ResumeData = {
 
   projects: [
     {
+      name: 'DealScannr',
+      subtitle: 'B2B pre-call diligence — angels & micro-VCs',
+      purpose:
+        'ICP: investors screening high deal volume who need structured, source-backed answers before first calls—not another generic AI search. Positioned between Crunchbase-style snapshots and enterprise data rooms.',
+      techStack: 'FastAPI, React 19, Vite, MongoDB, Qdrant, Redis, RAG, Stripe billing, Docker',
+      pinned: true,
+      link: 'https://github.com/aeolus87/dealscannr',
+      description: [
+        'Wedge: ~1-minute company scan pulling SEC, federal courts, GitHub, hiring, news, Wikipedia into one verdict + risk triage + 3 evidence-backed “questions to ask on the call.”',
+        'Monetization-ready: Stripe-integrated product surface; designed for subscription tiers (e.g. pro SMB pricing), not one-off demos.',
+        'Investor-grade trust: outputs are citation-grounded with validation and explicit INSUFFICIENT paths when evidence is thin—reduces reputational risk vs. black-box LLM answers.',
+      ],
+    },
+    {
       name: 'HQ',
-      subtitle: 'Full-Stack Work Management Platform',
+      subtitle: 'Work management platform',
       techStack: 'React 19, Node.js, Socket.IO, LiveKit, Cesium',
       description: [
-        'Developed a production-ready "Jira-style" platform with a 2-person team. Features include Kanban/Sprint boards, real-time collaboration (Socket.IO), and LiveKit video conferencing.',
-        'Integrated an AI Assistant (Gemini 2.0) for natural language task creation and 3D globe visualizations using Cesium.',
-        'Architected a modular backend with 15+ feature modules, Docker containerization, and GitHub Actions CI/CD.',
+        'Jira-style boards, real-time collab (Socket.IO), LiveKit video, Gemini assistant, Cesium globe.',
+        'Modular backend (15+ modules), Docker, GitHub Actions.',
       ],
     },
     {
       name: 'Moniqo',
-      subtitle: 'AI-Powered Trading Engine',
-      techStack: 'FastAPI, React 19, MongoDB, Redis, AI Agents',
+      subtitle: 'AI trading engine',
+      techStack: 'FastAPI, React 19, MongoDB, Redis',
       description: [
-        'Built a full-stack trading engine with automated agents utilizing Gemini and Groq for real-time sentiment analysis and decision-making.',
-        'Connected Binance and Polygon.io for live market data and utilized Ethers.js/Solana Web3.js for secure blockchain wallet interactions.',
-        'Implemented caching and rate-limiting patterns via Redis to ensure backend stability and performance during high-data-flow periods.',
+        'Agents + Gemini/Groq for sentiment; Binance & Polygon.io data; Ethers/Solana wallets.',
+        'Redis caching and rate limits for stable high-throughput API.',
       ],
     },
   ],
