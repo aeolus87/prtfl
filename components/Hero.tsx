@@ -42,9 +42,14 @@ export default function Hero({ personal }: HeroProps) {
             <MapPin className="w-3.5 h-3.5" />
             <span>{personal.location}</span>
           </div>
-          <p className="text-neutral-700 dark:text-neutral-300 font-medium mb-4">
+          <p className="text-neutral-700 dark:text-neutral-300 font-medium mb-1">
             {personal.title}
           </p>
+          {personal.availability && (
+            <p className="text-sm text-emerald-700 dark:text-emerald-400 font-medium mb-4">
+              {personal.availability}
+            </p>
+          )}
 
           <div className="flex flex-wrap gap-2">
             <a

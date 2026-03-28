@@ -7,8 +7,6 @@ interface ExperienceProps {
 }
 
 export default function Experience({ experience, education }: ExperienceProps) {
-  const educationYear = education.graduationDate.match(/\d{4}/)?.[0] || ''
-
   return (
     <div className="p-5 border border-neutral-200 dark:border-neutral-800 rounded-xl bg-white dark:bg-neutral-900">
       <div className="flex items-center gap-2 mb-4">
@@ -25,18 +23,28 @@ export default function Experience({ experience, education }: ExperienceProps) {
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-start justify-between gap-2">
-                <div>
+                <div className="min-w-0">
                   <h3 className="text-sm font-medium text-neutral-900 dark:text-white">
                     {job.role}
                   </h3>
                   <p className="text-xs text-neutral-500 dark:text-neutral-400">{job.company}</p>
+                  {job.location && (
+                    <p className="text-[11px] text-neutral-400 dark:text-neutral-500 mt-0.5">
+                      {job.location}
+                    </p>
+                  )}
                 </div>
-                <span className="text-xs text-neutral-400 dark:text-neutral-500 whitespace-nowrap px-2 py-0.5 bg-neutral-100 dark:bg-neutral-800 rounded">
-                  {job.period.includes('Present')
-                    ? '2025'
-                    : job.period.split(' – ')[0].split(' ')[1] || '2024'}
+                <span className="text-[10px] text-neutral-500 dark:text-neutral-400 text-right max-w-[7.5rem] leading-tight px-2 py-0.5 bg-neutral-100 dark:bg-neutral-800 rounded shrink-0">
+                  {job.period}
                 </span>
               </div>
+              {job.achievements.length > 0 && (
+                <ul className="mt-2 space-y-1 text-[11px] text-neutral-600 dark:text-neutral-400 list-disc pl-3.5 leading-snug">
+                  {job.achievements.map((line, i) => (
+                    <li key={i}>{line}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
         ))}
@@ -50,14 +58,14 @@ export default function Experience({ experience, education }: ExperienceProps) {
             <div className="flex items-start justify-between gap-2">
               <div>
                 <h3 className="text-sm font-medium text-neutral-900 dark:text-white">
-                  BS Information Technology
+                  {education.degree}
                 </h3>
                 <p className="text-xs text-neutral-500 dark:text-neutral-400">
                   {education.institution}
                 </p>
               </div>
-              <span className="text-xs text-neutral-400 dark:text-neutral-500 whitespace-nowrap px-2 py-0.5 bg-neutral-100 dark:bg-neutral-800 rounded">
-                {educationYear}
+              <span className="text-[10px] text-neutral-500 dark:text-neutral-400 px-2 py-0.5 bg-neutral-100 dark:bg-neutral-800 rounded shrink-0">
+                {education.graduationDate}
               </span>
             </div>
           </div>

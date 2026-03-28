@@ -18,14 +18,8 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 pb-6">
           {/* Left column */}
           <div className="flex flex-col gap-6">
-            <About summary={resumeData.summary} socSummary={resumeData.socSummary} />
+            <About summary={resumeData.summary} />
             <TechStack techStack={resumeData.techStack} limit={4} />
-            <TechStack
-              techStack={resumeData.socSkills}
-              limit={3}
-              title="Security Skills"
-              variant="security"
-            />
             <Projects
               projects={resumeData.projects}
               githubProfileUrl={resumeData.personal.github}

@@ -1,6 +1,8 @@
 export interface PersonalInfo {
   name: string
   title: string
+  /** Short hiring signal, e.g. remote availability */
+  availability?: string
   location: string
   email: string
   phone: string
@@ -61,9 +63,7 @@ export interface Blog {
 export interface ResumeData {
   personal: PersonalInfo
   summary: string
-  socSummary: string
   techStack: TechCategory[]
-  socSkills: TechCategory[]
   experience: Experience[]
   projects: Project[]
   blogs: Blog[]
