@@ -27,34 +27,51 @@ export default function Experience({ experience, education }: ExperienceProps) {
               </div>
               <div className="flex-1 min-w-0 flex items-start justify-between gap-2">
                 <div className="min-w-0">
-                  <h3 className="text-sm font-medium text-neutral-900 dark:text-white leading-snug">
-                    {job.role}
+                  <h3 className="text-sm leading-snug text-neutral-900 dark:text-white">
+                    <span className="font-semibold">{job.role}</span>
+                    <span className="font-normal text-neutral-400 dark:text-neutral-500"> — </span>
+                    <span className="font-normal text-[11px] text-neutral-500 dark:text-neutral-400 tabular-nums">
+                      {job.period}
+                    </span>
                   </h3>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400">{job.company}</p>
-                  {job.location && (
-                    <p className="text-[11px] text-neutral-400 dark:text-neutral-500 mt-0.5 line-clamp-1">
-                      {job.location}
-                    </p>
-                  )}
+                  <p className="text-xs italic text-neutral-500 dark:text-neutral-400 mt-0.5 leading-snug">
+                    {job.company}
+                    {job.location ? ` — ${job.location}` : ''}
+                  </p>
                 </div>
-                <div className="flex items-center gap-1 shrink-0">
-                  <span className="text-[10px] text-neutral-500 dark:text-neutral-400 text-right max-w-[6.5rem] leading-tight px-1.5 py-0.5 bg-neutral-100 dark:bg-neutral-800 rounded">
-                    {job.period}
-                  </span>
-                  <ChevronDown
-                    className="exp-chevron w-3.5 h-3.5 text-neutral-400 transition-transform shrink-0"
-                    aria-hidden
-                  />
-                </div>
+                <ChevronDown
+                  className="exp-chevron w-3.5 h-3.5 text-neutral-400 transition-transform shrink-0 mt-1"
+                  aria-hidden
+                />
               </div>
             </summary>
-            {job.achievements.length > 0 && (
-              <ul className="mt-2 ml-5 pl-3.5 space-y-1 text-[11px] text-neutral-600 dark:text-neutral-400 list-disc leading-snug">
-                {job.achievements.map((line, i) => (
-                  <li key={i}>{line}</li>
-                ))}
-              </ul>
-            )}
+            <div className="mt-2 ml-5 space-y-3">
+              {job.achievements.length > 0 && (
+                <ul className="pl-3.5 space-y-1 text-[11px] text-neutral-600 dark:text-neutral-400 list-disc leading-snug">
+                  {job.achievements.map((line, i) => (
+                    <li key={i}>{line}</li>
+                  ))}
+                </ul>
+              )}
+              {job.subsections?.map((sub, si) => (
+                <div
+                  key={si}
+                  className="pl-3 border-l-2 border-neutral-200 dark:border-neutral-700 space-y-1.5"
+                >
+                  <p className="text-[11px] leading-snug text-neutral-800 dark:text-neutral-200">
+                    <span className="font-semibold">{sub.title}</span>{' '}
+                    <span className="italic text-neutral-500 dark:text-neutral-400">
+                      ({sub.period})
+                    </span>
+                  </p>
+                  <ul className="pl-3.5 space-y-1 text-[11px] text-neutral-600 dark:text-neutral-400 list-disc leading-snug">
+                    {sub.achievements.map((line, i) => (
+                      <li key={i}>{line}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </details>
         ))}
 
@@ -71,7 +88,7 @@ export default function Experience({ experience, education }: ExperienceProps) {
                 {education.institution}
               </p>
             </div>
-            <span className="text-[10px] text-neutral-500 dark:text-neutral-400 px-1.5 py-0.5 bg-neutral-100 dark:bg-neutral-800 rounded shrink-0">
+            <span className="text-[10px] text-neutral-500 dark:text-neutral-400 shrink-0 tabular-nums">
               {education.graduationDate}
             </span>
           </div>

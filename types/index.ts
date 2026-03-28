@@ -17,6 +17,13 @@ export interface TechCategory {
   skills: string[]
 }
 
+/** Sub-project or focused initiative within one employer (same job entry). */
+export interface ExperienceSubsection {
+  title: string
+  period: string
+  achievements: string[]
+}
+
 export interface Experience {
   company: string
   location: string
@@ -24,6 +31,7 @@ export interface Experience {
   period: string
   current?: boolean
   achievements: string[]
+  subsections?: ExperienceSubsection[]
 }
 
 export interface Project {

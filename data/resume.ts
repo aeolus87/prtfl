@@ -90,17 +90,17 @@ export const resumeData: ResumeData = {
         'Developed multi-tenant property inspection flows with Leaflet and Puppeteer-driven PDF report generation.',
         'Implemented Gemini 2.0 via OpenRouter for internal documentation and meeting summaries with explicit prompt and context contracts.',
       ],
-    },
-    {
-      company: 'Kooya — Dialbot Local Model (speech stack & integration)',
-      location: 'Laguna Beach, CA / BGC',
-      role: 'Full Stack Developer',
-      period: 'Jan 2026 – Mar 2026',
-      achievements: [
-        'Migrated CPU voice-activity detection to Silero (ONNX): session/config contracts, vad runner, Docker/env templates, and expanded VAD unit tests.',
-        'Built GPU speech-to-text surface (Python): service entrypoints, requirements, and web harness scripts for end-to-end STT validation.',
-        'Integrated operator tooling: pathway graph visualization (PathwayNodeMap.jsx) and Chat-aligned UI; updated routes/schemas for harness workflows.',
-        'Developed TTS exploration: F5-TTS layout, voice assets, and repository normalization for consistent deployment references.',
+      subsections: [
+        {
+          title: 'Dialbot Local Model',
+          period: 'Jan 2026 – Mar 2026',
+          achievements: [
+            'Implemented CPU voice-activity migration to Silero (ONNX): session/config contracts, vad runner, Docker/env templates, and expanded VAD unit tests.',
+            'Built GPU speech-to-text surface (Python): service entrypoints, requirements, and web harness scripts for end-to-end STT validation.',
+            'Integrated operator tooling: pathway graph visualization (PathwayNodeMap.jsx) and Chat-aligned UI; updated routes/schemas for harness workflows.',
+            'Developed TTS exploration: F5-TTS layout, voice assets, and repository normalization for consistent deployment references.',
+          ],
+        },
       ],
     },
     {
