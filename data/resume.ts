@@ -4,7 +4,6 @@ export const resumeData: ResumeData = {
   personal: {
     name: 'Julius Callejo',
     title: 'Full Stack Engineer — AI, Fintech & Real-Time Systems',
-    availability: 'Open to US remote opportunities',
     location: 'Quezon City, Metro Manila',
     email: 'callejojuls@gmail.com',
     phone: '+63 9995359698',
