@@ -58,12 +58,19 @@ export default function Experience({ experience, education }: ExperienceProps) {
                   key={si}
                   className="pl-3 border-l-2 border-neutral-200 dark:border-neutral-700 space-y-1.5"
                 >
-                  <p className="text-[11px] leading-snug text-neutral-800 dark:text-neutral-200">
-                    <span className="font-semibold">{sub.title}</span>{' '}
-                    <span className="italic text-neutral-500 dark:text-neutral-400">
-                      ({sub.period})
-                    </span>
-                  </p>
+                  <div className="space-y-0.5">
+                    <p className="text-[11px] leading-snug text-neutral-800 dark:text-neutral-200">
+                      <span className="font-semibold">{sub.title}</span>{' '}
+                      <span className="italic text-neutral-500 dark:text-neutral-400">
+                        ({sub.period})
+                      </span>
+                    </p>
+                    {sub.context && (
+                      <p className="text-[11px] italic text-neutral-500 dark:text-neutral-400 leading-snug">
+                        {sub.context}
+                      </p>
+                    )}
+                  </div>
                   <ul className="pl-3.5 space-y-1 text-[11px] text-neutral-600 dark:text-neutral-400 list-disc leading-snug">
                     {sub.achievements.map((line, i) => (
                       <li key={i}>{line}</li>

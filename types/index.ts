@@ -21,6 +21,8 @@ export interface TechCategory {
 export interface ExperienceSubsection {
   title: string
   period: string
+  /** e.g. team / project line under the title */
+  context?: string
   achievements: string[]
 }
 
